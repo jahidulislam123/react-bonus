@@ -1,7 +1,7 @@
 // use local storage to store or manage  cart
 const addToDatabage =(id)=>{
     // let shoppingCart={};
-    let shoppingCart;
+    let shoppingCart={};
     //get the shopping cart
     const storedCart=localStorage.getItem('shopping-cart');
     if(storedCart){
@@ -16,8 +16,6 @@ const addToDatabage =(id)=>{
 
 
     // add quantity
-
-
         const quantity=shoppingCart[id];
     // const quantity =localStorage.getItem(id);
     if(quantity){
@@ -38,4 +36,26 @@ const addToDatabage =(id)=>{
 
   
 }
-export{addToDatabage};
+
+const RemoveFromDB=(id)=>{
+    // console.log("inside fake db",id);
+    const storedCart =localStorage.getItem('shopping-cart');
+    if(storedCart){
+        const shoppingCart=JSON.parse(storedCart);
+        if(id in shoppingCart){
+            // console.log('exist in teh cart');
+            delete shoppingCart[id];
+            localStorage.setItem('shopping-cart',JSON.stringify(shoppingCart));
+
+
+        }
+    }
+
+}
+
+// const deleteShoppingCart=()=>{
+//     localStorage.setItem('shopping-cart',JSON.stringify(shoppingCart));
+
+// }
+
+export{addToDatabage,RemoveFromDB};

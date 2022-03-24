@@ -1,5 +1,5 @@
 import React from 'react';
-import { addToDatabage } from '../../utilities/fakedb';
+import { addToDatabage, RemoveFromDB } from '../../utilities/fakedb';
 import './Cosmetic.css'
 
 const Cosmetic = (props) => {
@@ -15,7 +15,11 @@ const Cosmetic = (props) => {
         // caile ekhane local storage take add korte pari abar utilities ero add korte pari
     }
     const addToCartWithPera =()=>addToCart(id);
-
+    const removeFromCart=(id)=>{
+        // console.log('removing',id);
+        RemoveFromDB(id);
+        
+    }
     return (
         <div className='product' >
             <p><small>its has id {id}</small></p>
@@ -24,6 +28,7 @@ const Cosmetic = (props) => {
             <button onClick={addToCartWithPera} >Add to cart</button>
             {/* <button onClick={()=>addToCart(id)} >Add to cart :shortCurt</button> */}
             {/* <p>ONLY for ${name}</p> */}
+            <button onClick={()=>removeFromCart(id)} >Remove</button>
         </div>
     );
 };
