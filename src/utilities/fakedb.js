@@ -58,4 +58,30 @@ const RemoveFromDB=(id)=>{
 
 // }
 
+// const number =[2,34,5,5,3,34,55];
+// const sumReducer = (previous,current)=>previous+current;
+// const total=number.reduce(sumReducer,0)
+
+
+// const items =[
+//     {id:1,name:'alta',price:100},
+//     {id:1,name:'alta',price:100},
+//     {id:1,name:'alta',price:100},
+//     {id:1,name:'alta',price:100},
+//     {id:1,name:'alta',price:100},
+// ];
+// const itemSumReducer =(previous,current)=>previous+current.price;
+// const total=items.reduce.(itemSumReducer,0);
+
+
+// const getTotalPrice =products =>{
+//     const reducer =(previous,current)=>previous+current.price;
+//     const total =products.reduce(reducer,0);
+//     return total;
+// }
+
+
+//etake evabe export korte pari getTotalPrice as getToral
+
 export{addToDatabage,RemoveFromDB};
+
